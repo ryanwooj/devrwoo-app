@@ -61,7 +61,6 @@ router.post(
           id: user.id
         }
       };
-      //jsonwebtoken에 사인해서 36시간동안 사용가능한 토큰을 반환해라.
       jwt.sign(
         payload,
         config.get('jwtSecret'),
