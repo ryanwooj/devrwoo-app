@@ -1,0 +1,15 @@
+{
+  "folders": [
+	{
+		"path": "/Users/woo/Documents/webDevelopment/tennisConnector"
+	}
+],
+  "settings": {
+    "editor.acceptSuggestionOnEnter": "smart",
+    "php.suggest.basic": false,
+    "javascript.suggest.completeFunctionCalls": true,
+    "emmet.showSuggestionsAsSnippets": true,
+    "php.validate.enable": false,
+    "path-intellisense.extensionOnImport": true
+  }
+}
