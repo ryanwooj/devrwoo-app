@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
@@ -30,7 +29,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, email, password } = req.body;
+    const { name, email, password, avatar } = req.body;
 
     try {
       //See if user exists
@@ -42,12 +41,12 @@ router.post(
           .json({ errors: [{ msg: 'User Already Exists' }] });
       }
 
-      //Get users gravatar
-      const avatar = gravatar.url(email, {
-        s: '200',
-        r: 'pg',
-        d: 'mm'
-      });
+      // //Get users gravatar
+      // const avatar = gravatar.url(email, {
+      //   s: '200',
+      //   r: 'pg',
+      //   d: 'mm'
+      // });
 
       user = new User({
         name,
