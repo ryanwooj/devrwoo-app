@@ -8,9 +8,32 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
-  CLEAR_PROFILE
+  CLEAR_PROFILE,
+  USER_FIND,
+  FB_STATUS
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
+
+//Check User
+
+export const checkUser = ({ email }) => async dispatch => {
+  try {
+    const res = await axios.get('/api/auth/facebook');
+    // eslint-disable-next-line
+    res.data.map(item => {
+      if (item.email === email) {
+        return dispatch({
+          type: USER_FIND,
+          payload: true
+        });
+      }
+    });
+  } catch (error) {
+    dispatch({
+      type: AUTH_ERROR
+    });
+  }
+};
 
 // Load User
 export const loadUser = () => async dispatch => {
@@ -33,13 +56,18 @@ export const loadUser = () => async dispatch => {
 };
 
 // Register User
-export const register = ({ name, email, password }) => async dispatch => {
+export const register = ({
+  name,
+  email,
+  password,
+  avatar
+}) => async dispatch => {
   const config = {
     headers: {
       'Content-Type': 'application/json'
     }
   };
-  const body = JSON.stringify({ name, email, password });
+  const body = JSON.stringify({ name, email, password, avatar });
 
   try {
     const res = await axios.post('/api/users', body, config);
@@ -96,4 +124,5 @@ export const logout = () => dispatch => {
   dispatch({
     type: LOGOUT
   });
+  dispatch({ type: FB_STATUS });
 };
