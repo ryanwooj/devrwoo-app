@@ -8,7 +8,8 @@ import {
   UPDATE_PROFILE,
   DELETE_ACCOUNT,
   CLEAR_PROFILE,
-  GET_REPOS
+  GET_REPOS,
+  FB_STATUS
 } from './types';
 
 //GET CURRENT USERS PROFILE
@@ -220,12 +221,13 @@ export const deleteEducation = id => async dispatch => {
 //DELETE ACCOUNT & PROFILE
 
 export const deleteAccount = id => async dispatch => {
-  if (window.confirm('Are you sure? This CANNOT be undone!')) {
+  if (window.confirm('Are you sure to delete your account?')) {
     try {
       await axios.delete(`/api/profile`);
 
       dispatch({ type: CLEAR_PROFILE });
       dispatch({ type: DELETE_ACCOUNT });
+      dispatch({ type: FB_STATUS });
 
       dispatch(setAlert('Your Acocunt has been permanantly deleted'));
     } catch (err) {
