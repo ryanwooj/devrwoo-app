@@ -1,11 +1,11 @@
 {
   "name": "tennisconnector",
   "version": "1.0.0",
-  "description": "Social network for tennis players",
+  "description": "Los Angeles 테니스 모임 장려 ",
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server",
+    "server": "pm2 start server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
@@ -13,19 +13,38 @@
   "author": "Ryan Woo",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^4.0.1",
     "axios": "^0.19.0",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cache-headers": "^1.1.1",
+    "compression": "^1.7.4",
     "config": "^3.1.0",
     "express": "^4.17.1",
     "express-validator": "^5.3.1",
     "gravatar": "^1.8.0",
+    "http": "0.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.11",
+    "passport": "^0.4.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth": "^2.0.0",
     "path": "^0.12.7",
+    "pm2": "^3.5.1",
+    "react-responsive-carousel": "^3.1.49",
+    "react-router": "^5.0.1",
     "request": "^2.88.0"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
     "nodemon": "^1.19.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanwooj/tennisConnector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryanwooj/tennisConnector/issues"
+  },
+  "homepage": "https://github.com/ryanwooj/tennisConnector#readme"
 }
