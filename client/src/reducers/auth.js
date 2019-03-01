@@ -6,19 +6,32 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
-  DELETE_ACCOUNT
+  DELETE_ACCOUNT,
+  USER_FIND,
+  FB_STATUS
 } from '../actions/types';
 
 const initialState = {
   token: localStorage.getItem('token'),
   isAuthenticated: null,
   loading: true,
-  user: null
+  user: null,
+  facebook: null
 };
 
 const register = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
+    case USER_FIND:
+      return {
+        ...state,
+        facebook: payload
+      };
+    case FB_STATUS:
+      return {
+        ...state,
+        facebook: null
+      };
     case USER_LOADED:
       return {
         ...state,
