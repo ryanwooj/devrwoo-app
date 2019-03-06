@@ -48,7 +48,7 @@ const Project = ({ lang: { loading, currentLanguage } }) => {
             </Typography>
           </Grid>
           <Grid item sm={6} className={classes.textField}>
-            {' '}
+            <Typography variant='subtitle1'>"Hello World"</Typography>
             <Typography variant='body1'>
               {currentLanguage.project.paper1text}
             </Typography>
