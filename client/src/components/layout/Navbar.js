@@ -42,8 +42,6 @@ const Navbar = ({
     toggle: true
   });
 
-  // console.log(decide, offset);
-
   window.onscroll = function() {
     if (window.pageYOffset > offset + 1) {
       setChange({ ...state, toggle: false });
