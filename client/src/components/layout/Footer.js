@@ -17,10 +17,10 @@ const useStyles = makeStyles({
     textTransform: 'capitalize',
     background: 'rgba(255, 255, 255, 0.9)',
     '&:hover': {
-      background: '#ffffff',
-      color: '#000000'
+      background: '#fff',
+      color: '#000'
     },
-    color: '#000000',
+    color: '#000',
     textAlign: 'center'
   },
   root2: {
@@ -31,10 +31,10 @@ const useStyles = makeStyles({
     bottom: 0,
     background: 'rgba(255, 255, 255, 0.9)',
     '&:hover': {
-      background: '#ffffff',
-      color: '#000000'
+      background: '#fff',
+      color: '#000'
     },
-    color: '#000000',
+    color: '#000',
     textAlign: 'center'
   }
 });
