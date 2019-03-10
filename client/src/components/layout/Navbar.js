@@ -408,9 +408,6 @@ const useStyles = makeStyles(theme => ({
     zIndex: 700,
     position: 'fixed'
   },
-  title: {
-    flexGrow: 1
-  },
   icons: {
     fontSize: '1.5rem',
     color: '#fff'
