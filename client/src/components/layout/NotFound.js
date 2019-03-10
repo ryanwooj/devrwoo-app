@@ -6,9 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 const NotFound = () => {
+  const classes = useStyles();
   return (
     <>
-      <Container maxWindth='lg'>
+      <Container maxWindth='lg' className={classes.root}>
         <Grid container direction='column' justify='center' alignItems='center'>
           <Grid item>
             <Typography variant='h1'>PAGE NOT FOUND</Typography>
@@ -25,13 +26,14 @@ const NotFound = () => {
           </Grid>
         </Grid>
       </Container>
-      <h1 className='x-large text-primary'>
-        <i className='fas fa-exclamation-triangle' />
-        Page Not Found
-      </h1>
-      <p className='large'>Sorry, This page does not exist!</p>
     </>
   );
 };
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    backgroundColor: 'beige'
+  }
+}));
 
 export default NotFound;
