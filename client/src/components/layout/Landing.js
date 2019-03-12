@@ -20,9 +20,7 @@ import milada from '../../images/milada.jpg';
 const Landing = ({ isAuthenticated, lang: { loading, currentLanguage } }) => {
   const classes = useStyles();
   const lang = currentLanguage;
-  // if (isAuthenticated) {
-  //   return <Redirect to='/dashboard' />;
-  // }
+
   return (
     !loading && (
       <>
