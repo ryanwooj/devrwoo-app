@@ -165,7 +165,7 @@ const Landing = ({ isAuthenticated, lang: { loading, currentLanguage } }) => {
               </Card>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <Card className={classes.cardInfo}>
+              <Card className={classes.cardInfo2}>
                 <CardActionArea>
                   <Typography
                     style={{
@@ -233,10 +233,17 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center'
   },
   cardInfo: {
-    marginTop: theme.spacing(5),
+    marginTop: theme.spacing(7),
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
     marginBottom: theme.spacing(5),
+    minHeight: 150
+  },
+  cardInfo2: {
+    marginTop: theme.spacing(10),
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    marginBottom: theme.spacing(25),
     minHeight: 150
   },
   avatar: {
