@@ -34,7 +34,6 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
       <div className={classes.postItem}>
         <PostItem post={post} showAction={false} />
       </div>
-      =
       <CommentForm postId={post._id} />
       <Container className='comments'>
         {post.comments.map(comment => (
@@ -52,7 +51,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
 const useStyles = makeStyles(theme => ({
   paper: {
     margin: theme.spacing(3),
-    marginTop: theme.spacing(16),
+    marginTop: theme.spacing(10),
     marginBottom: theme.spacing(10),
     padding: theme.spacing(1),
     paddingTop: theme.spacing(2),
