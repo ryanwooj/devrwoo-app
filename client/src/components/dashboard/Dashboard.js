@@ -37,11 +37,13 @@ const Dashboard = ({
           {user && profile ? (
             <Grid container direction='row' justify='center'>
               <Grid item sm={5} md={4} className={classes.picField}>
-                <Avatar
-                  src={user && user.avatar}
-                  alt='So random'
-                  className={classes.avatar}
-                />
+                <Grid container justify='center'>
+                  <Avatar
+                    src={user && user.avatar}
+                    alt='So random'
+                    className={classes.avatar}
+                  />
+                </Grid>
               </Grid>
               <Grid item sm={7} md={8} className={classes.textField}>
                 <Grid container direction='column'>
@@ -127,7 +129,7 @@ const Dashboard = ({
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    marginTop: theme.spacing(18)
+    marginTop: theme.spacing(9)
   },
   paper: {
     height: 140,
