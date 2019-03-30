@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   root2: {
     paddingTop: '1rem',
     width: '100%',
-    position: 'absolute',
+    position: 'unset',
     left: 0,
     bottom: 0,
     background: 'rgba(255, 255, 255, 0.9)',
@@ -46,11 +46,7 @@ const Footer = ({ location, lang: { loading, currentLanguage } }) => {
 
   return (
     !loading && (
-      <Paper
-        className={
-          location.pathname === '/dashboard' ? classes.root2 : classes.root
-        }
-        elevation={3}>
+      <Paper className={classes.root} elevation={3}>
         <Container maxWidth='xl'>
           <Grid
             container
