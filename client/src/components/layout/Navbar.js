@@ -453,7 +453,8 @@ const useStyles = makeStyles(theme => ({
     textTransform: 'lowercase'
   },
   list: {
-    alignSelf: 'center'
+    alignSelf: 'center',
+    width: 300
   },
   fullList: {
     width: 'auto'
