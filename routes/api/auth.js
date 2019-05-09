@@ -42,7 +42,7 @@ router.post(
     try {
       //See if user exists in Database
       let user = await User.findOne({ email });
-
+      //유저가 확인되지 않으면 에러로 유저를 찾지 못했습니다. 라고 보내라.
       if (!user) {
         return res.status(400).json({ errors: [{ msg: 'No user Found' }] });
       }
