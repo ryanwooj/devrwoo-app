@@ -47,6 +47,7 @@ router.post(
         return res.status(400).json({ errors: [{ msg: 'No user Found' }] });
       }
 
+      //비크립트로 한번 검사해봐라, 들어온 패스워드와 데이터베이스 상의 것이 일치하는지
       const isMatch = await bcrypt.compare(password, user.password);
 
       if (!isMatch) {
