@@ -51,6 +51,7 @@ router.post(
       const isMatch = await bcrypt.compare(password, user.password);
 
       if (!isMatch) {
+        //만약 매치가 아니라면, 패스워드가 맞지 않습니다. 라고 보내라
         return res.status(400).json({ errors: [{ msg: 'Password no match' }] });
       }
 
