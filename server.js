@@ -20,4 +20,5 @@ app.use('/api/posts', require('./routes/api/posts'));
 //Define Port & use 4000 if doesn't have one
 const PORT = process.env.PORT || 4000;
 
+//start server at the Port
 app.listen(PORT, () => console.log(`SERVER STARTED ON PORT ${PORT}`));
