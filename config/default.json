@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://devrwoo:wpans3205@devconnector-pewwj.mongodb.net/test?retryWrites=true",
+  "jwtSecret": "ryanWooTheGod"
+}
