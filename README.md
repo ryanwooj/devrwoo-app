@@ -1,6 +1,6 @@
-### TENNIS CONNECTOR
+# TENNIS CONNECTOR
 
-##This app is made from scratch by Ryan Woo.
+## This app is made from scratch by Ryan Woo.
 
 ## I'm coding with:
 
@@ -14,7 +14,7 @@
 
 ##Objectives
 
-# Make Server
+### Server with Node.js
 
 - Make server.js & init Routes
 - Init Auth
