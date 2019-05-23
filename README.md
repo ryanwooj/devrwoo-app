@@ -1,6 +1,6 @@
 # TENNIS CONNECTOR
 
-## This app is made from scratch by Ryan Woo.
+### This app is made from scratch by Ryan Woo.
 
 ## I'm coding with:
 
@@ -12,7 +12,7 @@
 - Mongoose
 - Request
 
-##Objectives
+## Objectives
 
 ### Server with Node.js
 
