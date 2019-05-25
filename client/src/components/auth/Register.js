@@ -1,8 +1,13 @@
 import React, { Fragment, useState } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { setAlert } from '../../actions/alert';
+import { register } from '../../actions/auth';
+import PropTypes from 'prop-types';
+
 // import axios from 'axios';
 
-const Register = () => {
+const Register = ({ setAlert, register }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,9 +23,9 @@ const Register = () => {
   const onSubmit = async e => {
     e.preventDefault();
     if (password !== password2) {
-      console.log('PASSWORD DO NOT MATCH');
+      setAlert('PASSWORD DO NOT MATCH', 'danger');
     } else {
-      console.log('SUCCESS');
+      register({ name, email, password });
 
       // ACCESS TESTING WITH BACKEND
       //   const newUser = {
@@ -61,7 +66,6 @@ const Register = () => {
             name='name'
             value={name}
             onChange={e => onChange(e)}
-            required
           />
         </div>
         <div className='form-group'>
@@ -71,7 +75,6 @@ const Register = () => {
             name='email'
             value={email}
             onChange={e => onChange(e)}
-            required
           />
           <small className='form-text'>
             This site uses Gravatar so if you want Link profile image, use Link
@@ -107,4 +110,12 @@ const Register = () => {
   );
 };
 
-export default Register;
+Register.propTypes = {
+  setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired
+};
+
+export default connect(
+  null,
+  { setAlert, register }
+)(Register);
