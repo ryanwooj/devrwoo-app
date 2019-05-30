@@ -18,7 +18,7 @@ const EditProfile = props => {
     location: '',
     status: '',
     skills: '',
-    githubusername: '',
+    github: '',
     bio: '',
     twitter: '',
     facebook: '',
@@ -35,7 +35,7 @@ const EditProfile = props => {
     location,
     status,
     skills,
-    githubusername,
+    github,
     bio,
     twitter,
     facebook,
@@ -53,8 +53,7 @@ const EditProfile = props => {
       location: loading || !profile.location ? '' : profile.location,
       status: loading || !profile.status ? '' : profile.status,
       skills: loading || !profile.skills ? '' : profile.skills.join(','),
-      githubusername:
-        loading || !profile.githubusername ? '' : profile.githubusername,
+      github: loading || !profile.github ? '' : profile.github,
       bio: loading || !profile.bio ? '' : profile.bio,
       twitter: loading || !profile.twitter ? '' : profile.twitter,
       facebook: loading || !profile.facebook ? '' : profile.facebook,
@@ -149,8 +148,8 @@ const EditProfile = props => {
           <input
             type='text'
             placeholder='Github Username'
-            name='githubusername'
-            value={githubusername}
+            name='github'
+            value={github}
             onChange={e => onChange(e)}
           />
           <small className='form-text'>

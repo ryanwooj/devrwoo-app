@@ -8,7 +8,7 @@ const Spinner = () => (
       alt='loading'
       style={{
         width: '200px',
-        matgin: 'auto',
+        margin: 'auto',
         display: 'block'
       }}
     />
