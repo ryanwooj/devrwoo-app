@@ -1,4 +1,4 @@
-# TENNIS CONNECTOR
+# Ryan Connector
 
 ### This app is made from scratch by Ryan Woo.
 
