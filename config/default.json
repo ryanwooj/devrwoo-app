@@ -1,6 +1,8 @@
 {
-  "mongoURI": "mongodb+srv://devrwoo:wpans3205@devconnector-pewwj.mongodb.net/test?retryWrites=true",
+  "mongoURI": "mongodb+srv://devrwoo:Jaemun3205!@cluster0-aru28.mongodb.net/test?retryWrites=true&w=majority",
   "jwtSecret": "ryanWoojaemun",
-  "githubClientId": "d246b599e6367d665852",
-  "githubClientSecret": "1b76cd7f583a7f5933db2ca3d4bf34f134891f5a"
+  "GOOGLE_CLIENT_ID": "574396518798-9s7p3qehdqkjl87j1bo8rg65624hpg8v.apps.googleusercontent.com",
+  "GOOGLE_CLIENT_SECRET": "0yb_Ok5PjVur-6eAvi19bTc7",
+  "githubClientId": "354ba167c18c4411e379",
+  "githubClientSecret": "4ae768c6bb73900eb53ea278b7d2a4ac8927fe38"
 }
