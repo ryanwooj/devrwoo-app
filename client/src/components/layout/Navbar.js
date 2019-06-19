@@ -13,6 +13,7 @@ import Switch from '@material-ui/core/Switch';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import Toolbar from '@material-ui/core/Toolbar';
+import Hidden from '@material-ui/core/Hidden';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -323,7 +324,7 @@ const Navbar = ({
             )}
           </Drawer>
           <Grid container direction='row'>
-            <Grid item xs={6} md={3}>
+            <Grid item xs={5} sm={5} md={3}>
               <Button onClick={() => toggleDrawer(true)}>
                 {decide && scrollChange.toggle ? (
                   <Icon className={classes.icons}>menu</Icon>
@@ -347,22 +348,28 @@ const Navbar = ({
                     </div>
                   </div>
                 </div>
-                <Typography
-                  className={
-                    decide && scrollChange.toggle ? classes.name : classes.name2
-                  }>
-                  {currentLanguage.navtext.title}
-                </Typography>
+                <Hidden xsDown>
+                  <Typography
+                    className={
+                      decide && scrollChange.toggle
+                        ? classes.name
+                        : classes.name2
+                    }>
+                    {currentLanguage.navtext.title}
+                  </Typography>
+                </Hidden>
               </Button>
             </Grid>
-            <Grid item md={6} className={classes.linkNavi}>
-              {!loading && isAuthenticated ? (
-                <AuthLinks lang={currentLanguage} />
-              ) : (
-                <GuestLinks lang={currentLanguage} />
-              )}
-            </Grid>
-            <Grid item xs={6} md={3} className={classes.lastGrid}>
+            <Hidden smDown>
+              <Grid item xs={1} sm={1} md={6} className={classes.linkNavi}>
+                {!loading && isAuthenticated ? (
+                  <AuthLinks lang={currentLanguage} />
+                ) : (
+                  <GuestLinks lang={currentLanguage} />
+                )}
+              </Grid>
+            </Hidden>
+            <Grid item xs={7} sm={7} md={3} className={classes.lastGrid}>
               <Grid container alignItems='center' justify='flex-end'>
                 {!loading && !isAuthenticated && <GuestToggle />}
                 <FormControlLabel
@@ -374,6 +381,7 @@ const Navbar = ({
                       color='primary'
                     />
                   }
+                  className={classes.languageButton}
                   label={currentLanguage.current}
                 />
               </Grid>
@@ -407,6 +415,9 @@ const useStyles = makeStyles(theme => ({
     },
     zIndex: 700,
     position: 'fixed'
+  },
+  languageButton: {
+    margin: 1
   },
   icons: {
     fontSize: '1.5rem',
@@ -442,24 +453,25 @@ const useStyles = makeStyles(theme => ({
     textTransform: 'lowercase'
   },
   list: {
-    width: 300,
-    marginTop: theme.spacing(5),
-    paddingTop: theme.spacing(2)
+    alignSelf: 'center'
   },
   fullList: {
     width: 'auto'
   },
   linkNavi: {
-    alignSelf: 'center',
-    [theme.breakpoints.down('sm')]: {
-      display: 'none'
-    }
+    alignSelf: 'center'
+    // [theme.breakpoints.down('sm')]: {
+    //   display: 'none'
+    // }
   },
   lastGrid: {
     alignSelf: 'center'
   },
   ryan: {
-    marginRight: theme.spacing(1)
+    paddingRight: theme.spacing(1)
+  },
+  buttonLogo: {
+    width: 50
   }
 }));
 
