@@ -31,19 +31,19 @@ const Dashboard = ({
   return loading ? (
     <Spinner />
   ) : (
-    <Container maxWidth='md'>
+    <Container maxWidth='lg'>
       <Grid container direction='row' className={classes.root} spacing={2}>
         <Grid item xs={12}>
           {user && profile ? (
             <Grid container direction='row' justify='center'>
-              <Grid item sm={4}>
+              <Grid item sm={5} md={4} className={classes.picField}>
                 <Avatar
                   src={user && user.avatar}
                   alt='So random'
                   className={classes.avatar}
                 />
               </Grid>
-              <Grid item sm={8} className={classes.textField}>
+              <Grid item sm={7} md={8} className={classes.textField}>
                 <Grid container direction='column'>
                   <Grid item>
                     <Typography variant='h4' className={classes.lowercase}>
@@ -148,10 +148,12 @@ const useStyles = makeStyles(theme => ({
   avatar: {
     width: 160,
     height: 160,
-    top: 30,
-    left: 30
+    top: 50
   },
-  textField: { marginTop: theme.spacing(3) },
+  picField: {
+    padding: theme.spacing(2)
+  },
+  textField: { marginTop: theme.spacing(3), padding: theme.spacing(2) },
   lowercase: {
     textTransform: 'lowercase'
   },
