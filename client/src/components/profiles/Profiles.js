@@ -24,12 +24,12 @@ const Profiles = ({
     // eslint-disable-next-line
   }, [getProfiles]);
   return (
-    <Container maxWidth='md'>
+    <Container maxWidth='lg'>
       {loading ? (
         <Spinner />
       ) : (
         <Container>
-          {!loading && user ? <Dashboard /> : <></>}
+          {!loading && user ? <Dashboard /> : null}
           <Divider />
           <Grid container justify='flex-start'>
             <Grid item className={classes.doThis}>
