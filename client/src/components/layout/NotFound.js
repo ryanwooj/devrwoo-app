@@ -1,6 +1,5 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -21,7 +20,8 @@ const NotFound = () => {
           </Grid>
           <Grid item>
             <Typography variant='h3'>
-              This page does not exist. Don't Come back!
+              This page does not exist. <br />
+              Don't Come back!
             </Typography>
           </Grid>
         </Grid>
@@ -31,8 +31,14 @@ const NotFound = () => {
 };
 
 const useStyles = makeStyles(theme => ({
-  root: {
+  '@global': {
     backgroundColor: 'beige'
+  },
+  root: {
+    marginTop: theme.spacing(9),
+    paddingTop: theme.spacing(10),
+    paddingBottom: theme.spacing(12),
+    marginBottom: theme.spacing(30)
   }
 }));
 

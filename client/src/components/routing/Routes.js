@@ -51,7 +51,7 @@ const Routes = () => {
           path='/dashboard/education/:id'
           component={Education}
         />
-        <Route exact path='/eheheh' component={NotFound} />
+        <Route path='/' component={NotFound} />
       </Switch>
     </section>
   );
