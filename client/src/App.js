@@ -11,6 +11,8 @@ import Routes from './components/routing/Routes';
 import setAuthToken from './utils/setAuthToken';
 import { loadUser } from './actions/auth';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
 
 const middleware = applyMiddleware(thunkMiddleware);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -25,20 +27,38 @@ const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
-
+  const classes = useStyles();
   return (
     <Provider store={store}>
-      <Router>
-        <CssBaseline />
-        <Navbar />
-        <Switch>
-          <Route exact path='/' component={Landing} />
-          <Route component={Routes} />
-        </Switch>
-        <Footer />
-      </Router>
+      <Grid
+        container
+        direction='column'
+        justify='space-between'
+        className={classes.root}>
+        <Router>
+          <Grid container direction='column'>
+            <CssBaseline />
+            <Navbar />
+            <Switch>
+              <Route exact path='/' component={Landing} />
+              <Route component={Routes} />
+            </Switch>
+          </Grid>
+          <Grid container direction='column' justify='flex-end'>
+            <Footer />
+          </Grid>
+        </Router>
+      </Grid>
     </Provider>
   );
 };
+
+const currentHeight = window.innerHeight;
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    minHeight: currentHeight
+  }
+}));
 
 export default App;
