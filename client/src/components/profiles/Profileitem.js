@@ -23,7 +23,7 @@ const Profileitem = ({
 }) => {
   const classes = useStyles();
   return (
-    <Grid item xs={12} sm={6} md={4} className={classes.topmama}>
+    <Grid item xs={12} sm={6} md={4} lg={3} className={classes.topmama}>
       <Card className={classes.card}>
         <Grid container direction='column' justify='center' alignItems='center'>
           <CardMedia
@@ -70,7 +70,9 @@ const useStyles = makeStyles(theme => ({
   },
   topmama: {
     marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
+    paddingRight: theme.spacing(3),
+    paddingLeft: theme.spacing(3)
   },
   card: {
     margin: theme.spacing(1)
