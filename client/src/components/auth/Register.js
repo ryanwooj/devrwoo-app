@@ -76,7 +76,7 @@ const Register = ({
     !loading && (
       <Container component='main' maxWidth='md'>
         <Paper className={classes.paper}>
-          <Typography variant='h1'>{lang.register.title}</Typography>
+          <Typography variant='h2'>{lang.register.title}</Typography>
           <Icon>user</Icon>
           <Typography variant='body1'>{lang.register.subtitle}</Typography>
           <form
