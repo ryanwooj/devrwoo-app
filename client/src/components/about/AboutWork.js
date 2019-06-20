@@ -24,8 +24,8 @@ const AboutWork = ({ username, getGithubRepos, repos }) => {
           <Grid
             container
             direction='row'
-            alignItems='stretch'
-            justify='flex-start'>
+            alignItems='flex-start'
+            justify='center'>
             <Grid item xs={12} className={classes.title}>
               <Typography variant='h4'>Github Repos</Typography>
             </Grid>
@@ -38,7 +38,7 @@ const AboutWork = ({ username, getGithubRepos, repos }) => {
                     <Grid
                       container
                       direction='column'
-                      justify='space-evenly'
+                      justify='center'
                       alignItems='center'
                       className={classes.gridItem}>
                       <Grid item>
