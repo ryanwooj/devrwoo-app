@@ -5,6 +5,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import Hidden from '@material-ui/core/Hidden';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -18,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     overflowX: 'auto'
   },
   table: {
-    width: '100%'
+    minWidth: 300
   },
   hideSm: {
     [theme.breakpoints.down('md')]: {
@@ -38,7 +39,9 @@ const AboutEducation = () => {
             <TableRow>
               <TableCell>School</TableCell>
               <TableCell>Degree</TableCell>
-              <TableCell>Field of Study</TableCell>
+              <Hidden smDown>
+                <TableCell>Field of Study</TableCell>
+              </Hidden>
               <TableCell>Years</TableCell>
             </TableRow>
           </TableHead>
@@ -46,14 +49,17 @@ const AboutEducation = () => {
             <TableRow>
               <TableCell>Udacity (Grow with Google)</TableCell>
               <TableCell>Nanodegree</TableCell>
-              <TableCell>Full Stack Web Development</TableCell>
+              <Hidden smDown>
+                <TableCell>Full Stack Web Development</TableCell>
+              </Hidden>{' '}
               <TableCell>2017/09/04 -2019/01/13</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>University of California, Berkeley</TableCell>
               <TableCell>Bachelor's</TableCell>
-              <TableCell>Political / Computer Science</TableCell>
-
+              <Hidden smDown>
+                <TableCell>Political / Computer Science</TableCell>
+              </Hidden>
               <TableCell>2012/09/08 - 2016/05/26</TableCell>
             </TableRow>
           </TableBody>
