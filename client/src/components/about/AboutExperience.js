@@ -15,10 +15,10 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     marginTop: theme.spacing(3),
     padding: theme.spacing(3),
-    overflowX: 'scroll'
+    overflowX: 'auto'
   },
   table: {
-    minWidth: 650
+    minWidth: 300
   }
 }));
 
