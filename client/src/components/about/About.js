@@ -3,38 +3,25 @@ import AboutExperience from './AboutExperience';
 import AboutEducation from './AboutEducation';
 import AboutWork from './AboutWork';
 
-import Container from '@material-ui/core/Container';
-import SwipeableViews from 'react-swipeable-views';
-import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-
-function TabContainer({ children, dir }) {
-  return (
-    <Typography component='div' dir={dir} style={{ padding: 8 * 3 }}>
-      {children}
-    </Typography>
-  );
-}
+import { makeStyles } from '@material-ui/core/styles';
 
 const About = () => {
   const classes = useStyles();
-  const theme = useTheme();
 
   const [value, setValue] = useState(0);
 
   function handleChange(event, newValue) {
     setValue(newValue);
   }
-  function handleChangeIndex(index) {
-    setValue(index);
-  }
 
   return (
-    <Container maxWidth='lg' className={classes.root}>
-      <div className={classes.root}>
+    <Grid container className={classes.root}>
+      <Grid item xs={12}>
         <AppBar position='static' color='default'>
           <Tabs
             value={value}
@@ -47,23 +34,15 @@ const About = () => {
             <Tab label='Works' />
           </Tabs>
         </AppBar>
-        <SwipeableViews
-          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-          index={value}
-          onChangeIndex={handleChangeIndex}
-          className={classes.contentContainer}>
-          <TabContainer dir={theme.direction}>
-            <AboutExperience />
-          </TabContainer>
-          <TabContainer dir={theme.direction}>
-            <AboutEducation />
-          </TabContainer>
-          <TabContainer dir={theme.direction}>
-            <AboutWork username='ryanwooj' />
-          </TabContainer>
-        </SwipeableViews>
-      </div>
-    </Container>
+      </Grid>
+      <Grid item xs={12}>
+        <Paper>
+          {value === 0 && <AboutExperience />}
+          {value === 1 && <AboutEducation />}
+          {value === 2 && <AboutWork username='ryanwooj' />}
+        </Paper>
+      </Grid>
+    </Grid>
   );
 };
 
@@ -74,10 +53,8 @@ const useStyles = makeStyles(theme => ({
     }
   },
   root: {
-    marginTop: theme.spacing(10)
-  },
-  contentContainer: {
-    paddingBottom: theme.spacing(7)
+    marginTop: theme.spacing(10),
+    marginBottom: theme.spacing(10)
   }
 }));
 
