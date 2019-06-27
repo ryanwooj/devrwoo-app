@@ -1,4 +1,4 @@
-# Ryan Connector
+# ryanwoo.dev App
 
 ### This app is made from scratch by Ryan Woo.
 
